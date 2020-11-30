@@ -1,6 +1,6 @@
 # GG Enchantment
 
-This is a mod for minecraft which focuses to add more enchantments to the game. This mod currently have added one enchantement to the game.
+This is a mod for minecraft which focuses to add more enchantments to the game. This mod currently have added one enchantment to the game.
 
 ### Enchantment List:
 
