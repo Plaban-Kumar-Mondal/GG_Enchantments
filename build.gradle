@@ -1,7 +1,6 @@
 plugins {
 	id 'fabric-loom' version '0.5-SNAPSHOT'
 	id 'maven-publish'
-	id "com.matthewprenger.cursegradle" version "1.4.0"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -23,27 +22,6 @@ dependencies {
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 }
-
-//curseforge {
-//	if (project.hasProperty("curseForgeApiKey")) {
-//		apiKey = project.properties.curseForgeApiKey
-//	}
-//
-//	project {
-//		id = "423726"
-//		addGameVersion "1.16.4"
-//		mainArtifact(remapJar.jar) {
-//			displayName = "GG Enchantment version:$project.version"
-//		}
-//	}
-//	options {
-//		forgeGradleIntegration = false
-//	}
-//}
-//
-//afterEvaluate {
-//	tasks.curseforge423726.dependsOn remapJar
-//}
 
 processResources {
 	inputs.property "version", project.version
