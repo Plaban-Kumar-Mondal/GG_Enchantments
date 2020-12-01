@@ -10,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 public class MainFile implements ModInitializer {
 
 	public static final Enchantment LEECH = new LeechEnchantment(
-			Enchantment.Rarity.VERY_RARE,
+			Enchantment.Rarity.RARE,
 			EnchantmentTarget.WEAPON,
 			new EquipmentSlot[]{
 					EquipmentSlot.MAINHAND
@@ -22,5 +22,6 @@ public class MainFile implements ModInitializer {
 		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "leech"), LEECH);
 	}
 }
+
 
 

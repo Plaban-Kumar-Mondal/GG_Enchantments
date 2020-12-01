@@ -15,12 +15,17 @@ public class LeechEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 20;
+        return 15;
     }
 
     @Override
     public int getMaxLevel() {
         return 4;
+    }
+
+    @Override
+    public boolean isAvailableForEnchantedBookOffer() {
+        return true;
     }
 
     @Override
@@ -41,4 +46,5 @@ public class LeechEnchantment extends Enchantment {
              }
         }
     }
+
 }
