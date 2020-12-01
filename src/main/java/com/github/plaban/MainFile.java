@@ -17,9 +17,18 @@ public class MainFile implements ModInitializer {
 			}
 	);
 
+	public static final Enchantment MAKEBOOM = new MakeBoomEnchantment(
+	        Enchantment.Rarity.UNCOMMON,
+            EnchantmentTarget.TRIDENT,
+            new EquipmentSlot[]{
+                    EquipmentSlot.MAINHAND
+            }
+    );
+
 	@Override
 	public void onInitialize() {
 		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "leech"), LEECH);
+	    Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "make_boom"), MAKEBOOM);
 	}
 }
 
