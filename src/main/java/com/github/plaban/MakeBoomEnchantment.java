@@ -29,7 +29,7 @@ public class MakeBoomEnchantment extends Enchantment {
             if(target instanceof HostileEntity) {
                 World world = user.world;
                 world.createExplosion(target, target.getX(), target.getY() + 1, target.getZ(), 1, true, Explosion.DestructionType.DESTROY);
-
+                target.pushAwayFrom(user);
             } else {
                 user.damage(DamageSource.GENERIC, 0.25f);
             }
