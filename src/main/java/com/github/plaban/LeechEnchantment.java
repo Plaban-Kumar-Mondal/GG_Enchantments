@@ -15,7 +15,7 @@ public class LeechEnchantment extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return (7 * level);
+        return 5 + (level - 1) * 8;
     }
 
     @Override
