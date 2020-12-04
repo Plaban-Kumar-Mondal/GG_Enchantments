@@ -25,10 +25,13 @@ public class MainFile implements ModInitializer {
             }
     );
 
+
+
 	@Override
 	public void onInitialize() {
 		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "leech"), LEECH);
 	    Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "make_boom"), MAKEBOOM);
+
 	}
 }
 
