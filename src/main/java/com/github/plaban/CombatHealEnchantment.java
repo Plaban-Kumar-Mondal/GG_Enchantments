@@ -6,10 +6,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 
-public class LeechEnchantment extends Enchantment {
-     protected LeechEnchantment(Rarity weight, EnchantmentTarget type, EquipmentSlot[] slotTypes) {
+public class CombatHealEnchantment extends Enchantment {
+     protected CombatHealEnchantment(Rarity weight, EnchantmentTarget type, EquipmentSlot[] slotTypes) {
         super(weight, type, slotTypes);
     }
 
@@ -47,4 +49,8 @@ public class LeechEnchantment extends Enchantment {
         }
     }
 
+    @Override
+    public Text getName(int level) {
+        return super.getName(level).shallowCopy().formatted(Formatting.GREEN);
+    }
 }

@@ -9,7 +9,7 @@ import net.minecraft.util.registry.Registry;
 
 public class MainFile implements ModInitializer {
 
-	public static final Enchantment LEECH = new LeechEnchantment(
+	public static final Enchantment COMBATHEAL = new CombatHealEnchantment(
 			Enchantment.Rarity.RARE,
 			EnchantmentTarget.WEAPON,
 			new EquipmentSlot[]{
@@ -29,7 +29,7 @@ public class MainFile implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "leech"), LEECH);
+		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "combat_heal"), COMBATHEAL);
 	    Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "make_boom"), MAKEBOOM);
 
 	}

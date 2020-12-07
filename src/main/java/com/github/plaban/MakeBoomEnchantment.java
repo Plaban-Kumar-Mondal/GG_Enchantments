@@ -5,6 +5,8 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 
@@ -36,4 +38,8 @@ public class MakeBoomEnchantment extends Enchantment {
         }
     }
 
+    @Override
+    public Text getName(int level) {
+        return super.getName(level).shallowCopy().formatted(Formatting.GREEN);
+    }
 }
