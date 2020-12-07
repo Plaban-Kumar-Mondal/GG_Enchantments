@@ -25,13 +25,21 @@ public class MainFile implements ModInitializer {
             }
     );
 
+	public static final Enchantment POKE = new PokeEnchantment(
+			Enchantment.Rarity.UNCOMMON,
+			EnchantmentTarget.TRIDENT,
+			new EquipmentSlot[]{
+					EquipmentSlot.MAINHAND
+			}
+	);
+
 
 
 	@Override
 	public void onInitialize() {
 		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "combat_heal"), COMBATHEAL);
 	    Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "make_boom"), MAKEBOOM);
-
+		Registry.register(Registry.ENCHANTMENT, new Identifier("gg_enchantments", "poke"), POKE);
 	}
 }
 
