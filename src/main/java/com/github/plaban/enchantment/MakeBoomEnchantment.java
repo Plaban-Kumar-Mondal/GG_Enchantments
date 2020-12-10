@@ -3,7 +3,6 @@ package com.github.plaban.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -32,8 +31,6 @@ public class MakeBoomEnchantment extends Enchantment {
                 World world = user.world;
                 world.createExplosion(target, target.getX(), target.getY() + 1, target.getZ(), 1, true, Explosion.DestructionType.DESTROY);
                 target.pushAwayFrom(user);
-            } else {
-                user.damage(DamageSource.GENERIC, 0.25f);
             }
         }
     }
