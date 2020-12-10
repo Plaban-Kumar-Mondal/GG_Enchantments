@@ -4,6 +4,7 @@
   "package": "com.github.plaban.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "LivingEntityMixin"
   ],
   "client": [
   ],

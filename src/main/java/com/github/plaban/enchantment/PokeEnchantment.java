@@ -1,4 +1,4 @@
-package com.github.plaban;
+package com.github.plaban.enchantment;
 
 
 import net.minecraft.enchantment.Enchantment;

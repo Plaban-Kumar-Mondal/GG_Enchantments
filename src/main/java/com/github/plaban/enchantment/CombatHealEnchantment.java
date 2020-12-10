@@ -1,4 +1,4 @@
-package com.github.plaban;
+package com.github.plaban.enchantment;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -41,9 +41,9 @@ public class CombatHealEnchantment extends Enchantment {
                  } else if(level == 2) {
                      user.heal(0.50f);
                  } else if(level == 3) {
-                     user.heal(0.75f);
-                 } else {
                      user.heal(1.00f);
+                 } else {
+                     user.heal(1.50f);
                  }
              }
         }

@@ -1,4 +1,4 @@
-package com.github.plaban;
+package com.github.plaban.enchantment;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.Text;
@@ -40,7 +39,7 @@ public class BaneOfIllagerEnchantment extends Enchantment {
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof LivingEntity) {
             if(((LivingEntity) target).getGroup() == EntityGroup.ILLAGER){
-                int time = 10 + user.getRandom().nextInt(10 * level);
+                int time = 40 + user.getRandom().nextInt(10 * level);
                 ((LivingEntity) target).applyStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, time, 3));
             }
         }
