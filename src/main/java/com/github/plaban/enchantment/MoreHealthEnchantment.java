@@ -2,6 +2,7 @@ package com.github.plaban.enchantment;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -23,6 +24,11 @@ public class MoreHealthEnchantment extends Enchantment {
   @Override
   public int getMaxLevel() {
     return 4;
+  }
+
+  @Override
+  protected boolean canAccept(Enchantment other) {
+    return super.canAccept(other) && other != Enchantments.MENDING;
   }
 
   @Override

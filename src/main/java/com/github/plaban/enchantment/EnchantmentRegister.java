@@ -13,7 +13,7 @@ public class EnchantmentRegister {
   public static final Enchantment BANE_OF_ILLAGER = new BaneOfIllagerEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
   public static final Enchantment QUICK_ESCAPE = new QuickEscapeEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
   public static final Enchantment LEVIOSA = new LeviosaEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
-  public static final Enchantment MORE_HEALTH = new MoreHealthEnchantment(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
+  public static final Enchantment MORE_HEALTH = new MoreHealthEnchantment(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.CHEST});
 
   public static void registerEnchantment(String modID) {
     Registry.register(Registry.ENCHANTMENT, new Identifier(modID, "leviosa"), LEVIOSA);
