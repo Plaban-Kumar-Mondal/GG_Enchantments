@@ -5,7 +5,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,7 +25,7 @@ public abstract class LivingEntityMixin {
   @Shadow public abstract boolean removeStatusEffect(StatusEffect type);
 
   private void addStatusEff(int amp){
-    this.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 2_147_483_647, amp));
+    this.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 2_147_483_647, amp, false, false));
   }
 
   @Inject(at = @At("HEAD"), method = "tick")
@@ -34,22 +33,27 @@ public abstract class LivingEntityMixin {
 
     ItemStack chestplateStack = getEquippedStack(EquipmentSlot.CHEST);
     (chestplateStack.getEnchantments()).forEach((enchantment) -> {
-      if(enchantment.asString().equals("{lvl:1s,id:\"gg_enchantments:more_health\"}")) {
-        if(!(this.getMaxHealth() > 20)) {
-          addStatusEff(0);
-        }
-      } else if(enchantment.asString().equals("{lvl:2s,id:\"gg_enchantments:more_health\"}")){
-        if(!(this.getMaxHealth() > 20)) {
-          addStatusEff(1);
-        }
-      } else if(enchantment.asString().equals("{lvl:3s,id:\"gg_enchantments:more_health\"}")){
-        if(!(this.getMaxHealth() > 20)) {
-          addStatusEff(2);
-        }
-      } else if(enchantment.asString().equals("{lvl:4s,id:\"gg_enchantments:more_health\"}")){
-        if(!(this.getMaxHealth() > 20)) {
-          addStatusEff(3);
-        }
+      switch (enchantment.asString()) {
+        case "{lvl:1s,id:\"gg_enchantments:more_health\"}":
+          if (!(this.getMaxHealth() > 20)) {
+            addStatusEff(0);
+          }
+          break;
+        case "{lvl:2s,id:\"gg_enchantments:more_health\"}":
+          if (!(this.getMaxHealth() > 20)) {
+            addStatusEff(1);
+          }
+          break;
+        case "{lvl:3s,id:\"gg_enchantments:more_health\"}":
+          if (!(this.getMaxHealth() > 20)) {
+            addStatusEff(2);
+          }
+          break;
+        case "{lvl:4s,id:\"gg_enchantments:more_health\"}":
+          if (!(this.getMaxHealth() > 20)) {
+            addStatusEff(3);
+          }
+          break;
       }
     });
 
