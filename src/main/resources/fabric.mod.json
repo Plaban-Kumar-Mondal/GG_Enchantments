@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "gg_enchantments",
-  "version": "1.0.1",
+  "version": "1.1.1",
 
   "name": "Good Game Enchantments",
   "description": "This mods brings some extra enchantments to the game!",
@@ -9,7 +9,7 @@
     "Plaban"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/gg-enchantments",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.github.plaban.MainFile"
+    ],
+    "modmenu": [
+      "com.github.plaban.modmenu.GoodGameEnchantmentsMenuIntegration"
     ]
   },
   "mixins": [

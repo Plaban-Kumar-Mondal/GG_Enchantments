@@ -34,7 +34,7 @@ public class MakeBoomEnchantment extends Enchantment {
         if(target instanceof LivingEntity) {
             if(target instanceof HostileEntity) {
                 World world = user.world;
-                world.createExplosion(target, target.getX(), target.getY() + 1, target.getZ(), 1, config.enableFire, Explosion.DestructionType.DESTROY);
+                world.createExplosion(target, target.getX(), target.getY() + 1, target.getZ(), 1, config.enableFireInMakeBOOM, Explosion.DestructionType.DESTROY);
                 target.pushAwayFrom(user);
             }
         }
